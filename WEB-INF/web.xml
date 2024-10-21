@@ -4,108 +4,20 @@
          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-    <!-- Descripción de la aplicación -->
-    <display-name>Mi Aplicación JSP</display-name>
-    <description>Una aplicación de ejemplo usando JSP</description>
-
-    <!-- Configuración del contexto -->
-    <context-param>
-        <param-name>parametroEjemplo</param-name>
-        <param-value>valorEjemplo</param-value>
-    </context-param>
-
-    <!-- Filtro para manejar las solicitudes -->
-    <filter>
-        <filter-name>MyFilter</filter-name>
-        <filter-class>com.example.MyFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>MyFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-
-    <!-- Servlets -->
+    <!-- Configuración del servlet para index.jsp -->
     <servlet>
-        <servlet-name>default</servlet-name>
+        <servlet-name>indexServlet</servlet-name>
         <jsp-file>/index.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
-        <servlet-name>default</servlet-name>
-        <url-pattern>/index.jsp</url-pattern>
-    </servlet-mapping>
-
-    <!-- Configuración de otros JSPs -->
-    <servlet>
-        <servlet-name>actualizar</servlet-name>
-        <jsp-file>/actualizar.jsp</jsp-file>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>actualizar</servlet-name>
-        <url-pattern>/actualizar.jsp</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>eliminar</servlet-name>
-        <jsp-file>/eliminar.jsp</jsp-file>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>eliminar</servlet-name>
-        <url-pattern>/eliminar.jsp</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>hojaVida</servlet-name>
-        <jsp-file>/hojaVida.jsp</jsp-file>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>hojaVida</servlet-name>
-        <url-pattern>/hojaVida.jsp</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>insertar</servlet-name>
-        <jsp-file>/insertar.jsp</jsp-file>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>insertar</servlet-name>
-        <url-pattern>/insertar.jsp</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>mostrar</servlet-name>
-        <jsp-file>/mostrar.jsp</jsp-file>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>mostrar</servlet-name>
-        <url-pattern>/mostrar.jsp</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>pasatiempos</servlet-name>
-        <jsp-file>/pasatiempos.jsp</jsp-file>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>pasatiempos</servlet-name>
-        <url-pattern>/pasatiempos.jsp</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>ubicacion</servlet-name>
-        <jsp-file>/ubicacion.jsp</jsp-file>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ubicacion</servlet-name>
-        <url-pattern>/ubicacion.jsp</url-pattern>
+        <servlet-name>indexServlet</servlet-name>
+        <url-pattern>/</url-pattern> <!-- Redirige a la raíz -->
     </servlet-mapping>
 
     <!-- Manejo de errores -->
     <error-page>
         <error-code>404</error-code>
-        <location>/error404.jsp</location> <!-- Crea una página error404.jsp personalizada -->
-    </error-page>
-    <error-page>
-        <exception-type>java.lang.Exception</exception-type>
-        <location>/error.jsp</location> <!-- Crea una página error.jsp personalizada -->
+        <location>/error404.jsp</location> <!-- Personaliza tu página de error -->
     </error-page>
 
 </web-app>
